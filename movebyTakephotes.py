@@ -11,6 +11,9 @@ import olympe
 from logging import getLogger
 import traceback
 import os
+import re
+import tempfile
+import xml.etree.ElementTree as ET
 
 olympe.log.update_config({
     "handlers": {
@@ -132,16 +135,11 @@ if __name__ == "__main__":
                 if instruction == "0":
                     break
                 if instruction == "1": # forward 1
-                    drone(moveBy(1, 0, 0, 0)).wait()
+                    drone(moveBy(0.5, 0, 0, 0)).wait()
                     img_path = take_photo_burst(drone, "pic")
                 if instruction == "2": # backward 1
                     drone(moveBy(-1, 0, 0, 0)).wait()
                     img_path = take_photo_burst(drone, "pic")
-                if instruction == "3":
-                    drone(moveBy(0, 90, 0, 0)).wait()
-                    img_path = take_photo_burst(drone, "pic")
-                if instruction == "4":
-                    drone(moveBy(0, -90, 0, 0)).wait()
                     img_path = take_photo_burst(drone, "pic")
 
             assert drone(Landing()).wait().success()

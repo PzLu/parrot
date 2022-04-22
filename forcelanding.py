@@ -1,8 +1,8 @@
 import math
 import os
 import time
-import olympe
-from utils.switch_wifi import *
+import olympeclear
+
 from olympe.messages.ardrone3.Piloting import TakeOff, moveBy, Landing, moveTo, Circle, PCMD
 from olympe.messages.ardrone3.PilotingState import moveToChanged, FlyingStateChanged, PositionChanged, AttitudeChanged
 from olympe.messages.ardrone3.GPSSettingsState import GPSFixStateChanged
