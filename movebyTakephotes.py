@@ -119,6 +119,10 @@ def setup_photo_burst_mode(drone):
         )
     ).wait().success()
 
+def write2txt(filepath, contents):
+    with open(filepath, 'w') as f:
+        f.write(contents)
+
 if __name__ == "__main__":
     with olympe.Drone(DRONE_IP, media_port=DRONE_MEDIA_PORT) as drone:
         try:
