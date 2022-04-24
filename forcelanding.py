@@ -1,7 +1,7 @@
 import math
 import os
 import time
-import olympeclear
+import olympe
 
 from olympe.messages.ardrone3.Piloting import TakeOff, moveBy, Landing, moveTo, Circle, PCMD
 from olympe.messages.ardrone3.PilotingState import moveToChanged, FlyingStateChanged, PositionChanged, AttitudeChanged
