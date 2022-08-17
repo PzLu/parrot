@@ -1,0 +1,11 @@
+parrot-ue4-sphx-tests -level=obstacle_avoidance -config-file=path.yaml \
+-ams-path=BeforeLeftWall,Stefani \
+-ams-path=BeforeRightWall,Hatchback \
+-ams-path=InterTree,BoxTruck \
+-ams-path=MidHill,SUV \
+-ams-path=Hill,SportsCar \
+-ams-path=BeforeLeftBuild,Malcolm \
+-ams-path=BeforeRightBuild,Jasper  \
+-ams-path=AfterLeftBuild,Pickup \
+-ams-path=AfterRightBuild,Hatchback \
+-ams-path=UnderTrees,Hatchback
