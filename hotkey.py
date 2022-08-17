@@ -2,6 +2,10 @@ import subprocess
 import keyboard
 
 
+# sudo apt install parrot-tools-qdronectrl
+# qdronectrl
+
+
 def photo() -> None:
     """using keyboard to take photos,
     pay attention to the interpreter environment.

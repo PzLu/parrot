@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -rf images/meta/*
+rm -rf images/auto/*

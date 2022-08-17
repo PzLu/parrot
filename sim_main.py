@@ -2,7 +2,7 @@ from utils.simulation import DroneController, send4control, force_landing
 
 
 def collect_data():
-    my_drone = DroneController(drone_ip="10.202.0.1", photo_dir="images/auto", num=4, interval=5.0)
+    my_drone = DroneController(drone_ip="10.202.0.1", photo_dir="images/auto", num=2, interval=2.0)
     my_drone.connect()
     my_drone.take_off()
     my_drone.up_and_down()
@@ -23,6 +23,7 @@ def force_end():
 
 
 if __name__ == "__main__":
-    collect_data()
-    # control_test()
+
+    control_test()
     # force_end()
+    # collect_data()
