@@ -6,7 +6,7 @@ from olympe.messages.camera import (
 )
 from olympe.media import download_media, indexing_state
 from olympe.messages.ardrone3.Piloting import TakeOff, moveBy, Landing
-from olympe.messages.ardrone3.PilotingState import FlyingStateChanged
+from olympe.messages.ardrone3.PilotingState import FlyingStateChanged  # noqa E402
 import olympe
 from logging import getLogger
 import traceback
@@ -53,6 +53,7 @@ XMP_TAGS_OF_INTEREST = (
     "GPSAltitude",
 )
 
+
 def take_photo_burst(drone, save_path):
     # take a photo burst and get the associated media_id
     photo_saved = drone(photo_progress(result="photo_saved", _policy="wait"))
@@ -61,7 +62,7 @@ def take_photo_burst(drone, save_path):
         assert False, "take_photo timedout"
     photo_progress_info = photo_saved.received_events().last().args
     media_id = photo_progress_info["media_id"]
-    photo_count = photo_progress_info["photo_count"]
+    # photo_count = photo_progress_info["photo_count"]
     # download the photos associated with this media id
     drone.media.download_dir = tempfile.mkdtemp(prefix="olympe_photo_example")
     logger.info(
@@ -74,7 +75,7 @@ def take_photo_burst(drone, save_path):
     # Iterate over the downloaded media on the fly
     resources = media_download.as_completed(expected_count=1, timeout=60)
     resource_count = 0
-    img_id = None  
+    img_id = None
     for resource in resources:
         logger.info("Resource: {}".format(resource.resource_id))
         img_id = resource.resource_id
@@ -102,6 +103,7 @@ def take_photo_burst(drone, save_path):
     assert media_download.wait(1.).success(), "Photo burst media download"
     return os.path.join(save_path, img_id)
 
+
 def setup_photo_burst_mode(drone):
 
     drone(set_camera_mode(cam_id=0, value="photo")).wait()
@@ -119,9 +121,11 @@ def setup_photo_burst_mode(drone):
         )
     ).wait().success()
 
+
 def write2txt(filepath, contents):
     with open(filepath, 'w') as f:
         f.write(contents)
+
 
 if __name__ == "__main__":
     with olympe.Drone(DRONE_IP, media_port=DRONE_MEDIA_PORT) as drone:
@@ -135,22 +139,21 @@ if __name__ == "__main__":
             setup_photo_burst_mode(drone)
 
             while True:
+                # TODO
                 instruction = input().strip()
                 if instruction == "0":
                     break
-                if instruction == "1": # forward 1
+                if instruction == "1":  # forward 1
                     drone(moveBy(0.5, 0, 0, 0)).wait()
-                    img_path = take_photo_burst(drone, "pic")
-                if instruction == "2": # backward 1
+                    img_path = take_photo_burst(drone, "images/real")
+                if instruction == "2":  # backward 1
                     drone(moveBy(-1, 0, 0, 0)).wait()
-                    img_path = take_photo_burst(drone, "pic")
-                    img_path = take_photo_burst(drone, "pic")
+                    img_path = take_photo_burst(drone, "images/real")
+                    img_path = take_photo_burst(drone, "images/real")
 
             assert drone(Landing()).wait().success()
             drone.disconnect()
-        except:
+        except Exception:
             print(traceback.format_exc())
             # assert drone(Landing()).wait().success()
             drone.disconnect()
-
-
