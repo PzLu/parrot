@@ -1,54 +1,54 @@
 
 Paths:
-- Name: 'BeforeLeftWall'
-SplinePoints:
-- 1.85 -12 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'BeforeLeftWall'
+    SplinePoints:
+      - 1.85 -12 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'BeforeRightWall'
-SplinePoints:
-- 1.85 -18 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'BeforeRightWall'
+    SplinePoints:
+      - 1.85 -18 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'InterTree'
-SplinePoints:
-- 88 28 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'InterTree'
+    SplinePoints:
+      - 88 28 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'BeforeLeftBuild'
-SplinePoints:
-- 50 30 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'BeforeLeftBuild'
+    SplinePoints:
+      - 50 30 0.4 Walk 15
+    ClosedLoop: true
+  
+  - Name: 'BeforeRightBuild'
+    SplinePoints:
+      - 50 10 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'BeforeRightBuild'
-SplinePoints:
-- 50 10 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'AfterLeftBuild'
+    SplinePoints:
+      - 30 30 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'AfterLeftBuild'
-SplinePoints:
-- 30 30 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'AfterRightBuild'
+    SplinePoints:
+      - 30 10 0.4 Walk 15
+    ClosedLoop: true
 
-- Name: 'AfterRightBuild'
-SplinePoints:
-- 30 10 0.4 Walk 15
-ClosedLoop: true
-
-- Name: 'Hill'
-SplinePoints:
-- -20 -20 0.4 Walk 154
-ClosedLoop: true
-
-- Name: 'MidHill'
-SplinePoints:
-- -30 -25 0.4 Walk 15
-ClosedLoop: true
-
-- Name: 'UnderTrees'
-SplinePoints:
-- -45 -10 0.4 Walk 15
-ClosedLoop: true
+  - Name: 'Hill'
+    SplinePoints:
+      - -20 -20 0.4 Walk 154
+    ClosedLoop: true
+  
+  - Name: 'MidHill'
+    SplinePoints:
+      - -30 -25 0.4 Walk 15
+    ClosedLoop: true
+  
+  - Name: 'UnderTrees'
+    SplinePoints:
+      - -45 -10 0.4 Walk 15
+    ClosedLoop: true
 
 # LogAMS: Display: == Available Characters ======================================
 # LogAMS: Display: - Stefani
@@ -60,5 +60,3 @@ ClosedLoop: true
 # LogAMS: Display: - Pickup
 # LogAMS: Display: - SUV
 # LogAMS: Display: - SportsCar
-
-# https://developer.parrot.com/docs/sphinx/populate_with_actors.html#customization-of-ams
